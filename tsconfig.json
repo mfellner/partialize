@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es2017",
+    "moduleResolution": "Node",
+    "newLine": "LF",
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "sourceMap": true,
+    "declaration": true,
+    "pretty": true,
+    "lib": [
+      "dom",
+      "es2017"
+    ]
+  },
+  "files": [
+    "index.ts"
+  ]
+}
