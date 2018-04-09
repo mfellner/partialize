@@ -10,6 +10,12 @@ export type Part<T> = {
       fallback?: F
     ) => F extends undefined ? T[P] | undefined : NotUndefined<T[P]>;
   } & (T[P] extends Primitive ? {} : Part<T[P]>)
+} & {
+  [k: number]: {
+    $resolve: <F extends T[any] | undefined = undefined>(
+      fallback?: F
+    ) => F extends undefined ? T[any] | undefined : NotUndefined<T[any]>;
+  };
 };
 
 function isPrimitive(x: any): x is Primitive {

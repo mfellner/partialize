@@ -110,6 +110,7 @@ Temporary Items
 
 # End of https://www.gitignore.io/api/osx,linux,code,node
 
+/dist
 *.js
 *.d.ts
 *.js.map
