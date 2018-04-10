@@ -53,9 +53,26 @@ test('array of objects', () => {
   const objects: Array<{ foo: string }> = [{ foo: 'bar' }];
   const a = partialize(objects);
 
-  const bar: string = a[0].$resolve()!.foo;
+  const foo: { foo: string } = a[0].$resolve()!;
+  expect(foo).toEqual({ foo: 'bar' });
+
+  const bar: string = a[0].foo.$resolve()!;
   expect(bar).toEqual('bar');
 
-  const baz: string = a[1].$resolve({ foo: 'baz' }).foo;
+  const baz: string = a[1].foo.$resolve('baz');
   expect(baz).toEqual('baz');
+});
+
+test('array of arrays', () => {
+  const objects: string[][] = [['foo']];
+  const a = partialize(objects);
+
+  const b: string[] = a[0].$resolve()!;
+  expect(b).toEqual(['foo']);
+
+  const foo: string = a[0][0].$resolve()!;
+  expect(foo).toEqual('foo');
+
+  const bar: string = a[1][1].$resolve('bar');
+  expect(bar).toEqual('bar');
 });
