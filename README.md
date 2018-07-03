@@ -1,6 +1,6 @@
 # partialize
 
-[![Travis](https://img.shields.io/travis/mfellner/partialize.svg)](travis-ci.org/mfellner/partialize)
+[![Travis](https://img.shields.io/travis/mfellner/partialize.svg)](https://travis-ci.org/mfellner/partialize)
 [![Codecov](https://img.shields.io/codecov/c/github/mfellner/partialize.svg)](https://codecov.io/gh/mfellner/partialize)
 [![codebeat](https://codebeat.co/badges/1c20b7a3-b782-4f84-ba00-d2ee99d198f8)](https://codebeat.co/projects/github-com-mfellner-partialize-master)
 [![npm](https://img.shields.io/npm/v/@mfellner/partialize.svg)](https://www.npmjs.com/package/@mfellner/partialize)
