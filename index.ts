@@ -42,8 +42,8 @@ function isObject(x: any): x is object {
   return typeof x === 'object' && x !== null;
 }
 
-export default function partialize<T extends object>(x: T): Part<T> {
-  return new Proxy(x, {
+export default function partialize<T extends object>(x: T | undefined): Part<T> {
+  return new Proxy(x || {}, {
     get: (target: T, p: keyof T, _) => {
       if (p === '$resolve') {
         return target[p];

@@ -31,6 +31,11 @@ test('partialize', () => {
   expect(o.arr[0].$resolve()).toEqual({ x: 'x' });
 });
 
+test('partialize of undefined', () => {
+  const n: number = partialize<Something>(undefined).obj.foo.$resolve(42);
+  expect(n).toEqual(42);
+});
+
 test('types', () => {
   const s1: string | undefined = o.str.$resolve();
   const s2: string = o.str.$resolve('fallback');
