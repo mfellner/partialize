@@ -28,7 +28,7 @@ export type ObjectPart<T> = {
   } & (T[P] extends Primitive ? {} : Part<T[P]>)
 };
 
-function isPrimitive(x: any): x is Primitive {
+function isPrimitive(x: unknown): x is Primitive {
   return (
     typeof x === 'string' ||
     typeof x === 'boolean' ||
@@ -38,8 +38,8 @@ function isPrimitive(x: any): x is Primitive {
   );
 }
 
-function isObject(x: any): x is object {
-  return typeof x === 'object' && x !== null;
+function isObject(x: unknown): x is object {
+  return x instanceof Object;
 }
 
 export default function partialize<T extends object>(x: T | undefined): Part<T> {
@@ -70,5 +70,5 @@ export default function partialize<T extends object>(x: T | undefined): Part<T> 
       clone.$resolve = () => v;
       return partialize(clone);
     }
-  }) as any;
+  }) as Part<T>;
 }
